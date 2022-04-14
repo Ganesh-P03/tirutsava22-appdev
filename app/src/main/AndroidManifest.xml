@@ -14,11 +14,13 @@
             android:exported="true" />
         <activity
             android:name=".activities.SigninActivity"
+            android:windowSoftInputMode="stateVisible"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar"/>
         <activity
             android:name=".activities.SignupActivity"
+            android:windowSoftInputMode="stateVisible"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar" />

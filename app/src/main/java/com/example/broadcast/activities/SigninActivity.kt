@@ -9,6 +9,8 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import com.example.broadcast.R
+import com.example.broadcast.firebase.FireStoreClass
+import com.example.broadcast.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -49,7 +51,7 @@ class SigninActivity : BaseActivity() {
 
     }
 
-    
+
 
     private fun  signinRegisteredUser(){
         val email: String = et_signin_email.text.toString().trim { it <= ' ' }
@@ -60,17 +62,16 @@ class SigninActivity : BaseActivity() {
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
-                    hideProgressDialog()
+
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("signing", "signInWithEmail:success")
                         val user = auth.currentUser
-
-                        startActivity(Intent(this,MainActivity::class.java))
-                        finish()
+                        FireStoreClass().signinUser(this)
 
                     } else {
                         // If sign in fails, display a message to the user.
+                        hideProgressDialog()
                         Log.w("signing", "signInWithEmail:failure", task.exception)
                         Toast.makeText(baseContext, "Authentication failed.",
                             Toast.LENGTH_SHORT).show()
@@ -97,9 +98,11 @@ class SigninActivity : BaseActivity() {
         }
     }
 
-
-
-
+    fun signinSuccess(user: User) {
+        hideProgressDialog()
+        startActivity(Intent(this,MainActivity::class.java))
+        finish()
+    }
 
 
 }

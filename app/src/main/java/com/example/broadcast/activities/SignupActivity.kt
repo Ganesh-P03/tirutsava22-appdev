@@ -6,6 +6,8 @@ import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Toast
 import com.example.broadcast.R
+import com.example.broadcast.firebase.FireStoreClass
+import com.example.broadcast.models.User
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -50,19 +52,17 @@ class SignupActivity : BaseActivity() {
             showProgressDialog("Please Wait")
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener {
                     task ->
-                hideProgressDialog()
+
                 if (task.isSuccessful) {
                     val firebaseUser = task.result!!.user!!
                     val registeredEmail = firebaseUser.email!!
-                    Toast.makeText(
-                        this,
-                        "$name you has been succesfully registered",
-                        Toast.LENGTH_LONG
-                    ).show()
-                    FirebaseAuth.getInstance().signOut()
-                    finish()
+                    val user = User(firebaseUser.uid,name,registeredEmail)
+                    FireStoreClass().registerUser(this,user)
+
+
                 }
                 else{
+                    hideProgressDialog()
                     Toast.makeText(
                         this, "Sorry Registration Failed",
                         Toast.LENGTH_SHORT
@@ -93,6 +93,16 @@ class SignupActivity : BaseActivity() {
                 true
             }
         }
+    }
+
+    fun userRegisteredSuccess() {
+        Toast.makeText(
+            this, "You Have successfully registered",
+            Toast.LENGTH_SHORT
+        ).show()
+        hideProgressDialog()
+        FirebaseAuth.getInstance().signOut()
+        finish()
     }
 
 }
