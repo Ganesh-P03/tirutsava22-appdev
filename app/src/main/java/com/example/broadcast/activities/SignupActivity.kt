@@ -24,6 +24,7 @@ class SignupActivity : BaseActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setActionBar()
+        btn_sign_up.setOnClickListener { registerUser() }
     }
 
     private fun setActionBar(){
@@ -37,7 +38,7 @@ class SignupActivity : BaseActivity() {
 
         toolbar_sign_up_activity.setNavigationOnClickListener{onBackPressed()}
 
-        btn_sign_up.setOnClickListener { registerUser() }
+
 
     }
 

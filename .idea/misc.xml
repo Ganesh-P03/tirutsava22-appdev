@@ -5,9 +5,15 @@
       <map>
         <entry key="..\:/Tirutsava2022/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23697916666666666" />
         <entry key="..\:/Tirutsava2022/app/src/main/res/drawable/button_shape.xml" value="0.2171875" />
+        <entry key="..\:/Tirutsava2022/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.17407407407407408" />
         <entry key="..\:/Tirutsava2022/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23697916666666666" />
+        <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_add_events.xml" value="0.1" />
+        <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_add_lost.xml" value="0.2" />
+        <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_events.xml" value="0.17617753623188406" />
+        <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_found.xml" value="0.1984375" />
         <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_intro.xml" value="0.2" />
-        <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_main.xml" value="0.16077898550724637" />
+        <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_lost.xml" value="0.1" />
+        <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_signin.xml" value="0.1" />
         <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_signup.xml" value="0.1" />
         <entry key="..\:/Tirutsava2022/app/src/main/res/layout/activity_splash.xml" value="0.21666666666666667" />
