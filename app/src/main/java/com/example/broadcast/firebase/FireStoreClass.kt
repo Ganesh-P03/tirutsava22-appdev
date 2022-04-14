@@ -2,6 +2,7 @@ package com.example.broadcast.firebase
 
 import android.util.Log
 import com.example.broadcast.activities.AddEventsActivity
+import com.example.broadcast.activities.EventsActivity
 import com.example.broadcast.activities.SigninActivity
 import com.example.broadcast.activities.SignupActivity
 import com.example.broadcast.models.Event
@@ -94,5 +95,36 @@ class FireStoreClass {
         }
         return currentUserID
     }
+
+    fun getEventsList(activity:EventsActivity){
+        myFirestore.collection("EVENTS")
+            .get()
+            .addOnSuccessListener { document ->
+
+                Log.e(activity.javaClass.simpleName, document.documents.toString())
+
+                val eventsList: ArrayList<Event> = ArrayList()
+
+
+                for (i in document.documents) {
+
+                    val event = i.toObject(Event::class.java)!!
+
+
+                    eventsList.add(event)
+                }
+
+
+                activity.populateEventsListToUI(eventsList)
+            }
+            .addOnFailureListener { e ->
+
+                activity.hideProgressDialog()
+                Log.e(activity.javaClass.simpleName, "Error while creating a event.", e)
+            }
+
+
+    }
+
 
 }
