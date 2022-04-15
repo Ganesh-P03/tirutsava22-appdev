@@ -86,15 +86,7 @@ class FireStoreClass {
             }
     }
 
-    fun getCurrentEventID(): String {
-        val currentUser = FirebaseAuth.getInstance().currentUser
 
-        var currentUserID = ""
-        if (currentUser != null) {
-            currentUserID = currentUser.uid
-        }
-        return currentUserID
-    }
 
     fun getEventsList(activity:EventsActivity){
         myFirestore.collection("EVENTS")

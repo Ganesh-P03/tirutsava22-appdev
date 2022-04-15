@@ -18,8 +18,8 @@
             android:id="@+id/toolbar_add_events_activity"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:text="ADD EVENT"/>
+            android:text="ADD EVENT"
+            android:background="?attr/colorPrimary" />
     </com.google.android.material.appbar.AppBarLayout>
 
 

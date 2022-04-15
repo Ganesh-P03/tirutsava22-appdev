@@ -22,7 +22,11 @@ class AddEventsActivity : BaseActivity() {
                 registerEvent()
         }
 
+        supportActionBar?.setDisplayShowTitleEnabled(true);
+
     }
+
+
 
     private fun registerEvent(){
 
@@ -36,6 +40,9 @@ class AddEventsActivity : BaseActivity() {
             showProgressDialog("Please Wait")
             val curr_event =Event(name,description,eventTime,type);
             FireStoreClass().addNewEvent(this,curr_event)
+
+
+            FireStoreClass().getEventsList(EventsActivity())
         }
 
     }

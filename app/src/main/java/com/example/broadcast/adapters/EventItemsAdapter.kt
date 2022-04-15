@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.broadcast.R
 import com.example.broadcast.models.Event
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.item_event.view.*
 
 open class EventItemsAdapter(private val context: Context,
                              private val list:ArrayList<Event>):
@@ -25,15 +27,30 @@ open class EventItemsAdapter(private val context: Context,
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val model = list[position]
+
+        holder.itemView.tv_event_name.text = model.event_name
+        holder.itemView.tv_event_desc.text = model.description
+        holder.itemView.tv_event_type.text = model.type
+        holder.itemView.tv_event_time.text = model.time
+
+
+        holder.itemView.setOnClickListener {
+
+            if (onClickListener != null) {
+                onClickListener!!.onClick(position, model)
+            }
+        }
+
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return list.size
     }
 
     fun setOnClickListener(onClickListener: OnClickListener) {
         this.onClickListener = onClickListener
+
     }
 
     interface OnClickListener {

@@ -6,30 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.EventsActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:elevation="5dp"
-        app:cardCornerRadius="5dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_events_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/tv_no_events_available"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="no events available"
-            android:textColor="@color/secondary_text_color"
-            android:textSize="18dp"/>
-
-    </androidx.cardview.widget.CardView>
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_events_activity"
         android:layout_width="match_parent"
@@ -47,6 +23,34 @@
             android:textStyle="bold"/>
 
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_events_activity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_events_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_no_events_available"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="no events available"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="18dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

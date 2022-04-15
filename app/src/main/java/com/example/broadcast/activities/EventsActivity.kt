@@ -19,8 +19,11 @@ class EventsActivity : BaseActivity() {
         setContentView(R.layout.activity_events)
         setActionBar()
 
+
+
         fab_add_events.setOnClickListener{
             startActivity(Intent(this,AddEventsActivity::class.java))
+
         }
 
         showProgressDialog("Please Wait")
@@ -42,32 +45,26 @@ class EventsActivity : BaseActivity() {
 
     }
 
-//    fun populateEventsListToUI(eventList:ArrayList<Event>){
-//        hideProgressDialog()
-//
-//        if(eventList.size>0){
-//            rv_events_list.visibility= View.VISIBLE
-//            tv_no_events_available.visibility=View.GONE
-//
-//            rv_events_list.layoutManager =LinearLayoutManager(this)
-//            rv_events_list.setHasFixedSize(true)
-//
-//            val adapter = EventItemsAdapter(this@MainActivity, eventList)
-//            rv_events_list.adapter = adapter // Attach the adapter to the recyclerView.
-//
-//            adapter.setOnClickListener(object :
-//                EventItemsAdapter.OnClickListener {
-//                override fun onClick(position: Int, model: Board) {
-//                    val intent = Intent(this@MainActivity, TaskListActivity::class.java)
-//                    intent.putExtra(Constants.DOCUMENT_ID, model.documentId)
-//                    startActivity(intent)
-//                }
-//            })
-//        } else {
-//            rv_events_list.visibility = View.GONE
-//            tv_no_events_available.visibility = View.VISIBLE
-//
-//        }
-//    }
+
+
+    fun populateEventsListToUI(eventList:ArrayList<Event>){
+        hideProgressDialog()
+
+        if(eventList.size>0){
+            rv_events_list.visibility= View.VISIBLE
+            tv_no_events_available.visibility=View.GONE
+
+            rv_events_list.layoutManager =LinearLayoutManager(this)
+            rv_events_list.setHasFixedSize(true)
+
+            val adapter = EventItemsAdapter(this, eventList)
+            rv_events_list.adapter = adapter // Attach the adapter to the recyclerView.
+
+        } else {
+            rv_events_list.visibility = View.GONE
+            tv_no_events_available.visibility = View.VISIBLE
+
+        }
+    }
 
 }
