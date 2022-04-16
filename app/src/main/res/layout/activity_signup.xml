@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.SignupActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_sign_up_activity"
@@ -15,7 +16,7 @@
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="signup"
             android:textColor="@color/primary_text_color"
@@ -24,28 +25,29 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginTop="12dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:gravity="center"
-            android:text="Enter the details"
+            android:text="Please enter the details"
             android:textColor="@color/secondary_text_color"
             android:textSize="20dp"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:elevation="2px"
-            app:cardCornerRadius="3px">
+            app:cardCornerRadius="8dp"
+            android:layout_margin="18dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,57 +57,76 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="clear_text"
+                    >
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/et_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="name"
-                        android:inputType="textEmailAddress"
-                        android:textSize="12dp"/>
+                        android:hint="ex:Name"
 
+                        android:inputType="textCapWords"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7A8089" />
                 </com.google.android.material.textfield.TextInputLayout>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="clear_text"
+                    >
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/et_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="email"
-                        android:inputType="textEmailAddress"
-                        android:textSize="12dp"/>
+                        android:hint="example@gmail.com"
 
+                        android:inputType="textEmailAddress"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7A8089" />
                 </com.google.android.material.textfield.TextInputLayout>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="clear_text"
+                    >
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="password"
-                        android:inputType="textPassword"
-                        android:textSize="16sp"/>
 
+
+                        android:inputType="textPassword"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7A8089" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Button android:id="@+id/btn_sign_up"
+
+                <Button
+                    android:id="@+id/btn_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/button_shape"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:gravity="center"
-
-                    android:text="sign_up"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:text="sign up"
+
+                    />
+
+
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

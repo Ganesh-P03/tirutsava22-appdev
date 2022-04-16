@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     android:layout_gravity="center"
 
     tools:context=".activities.AddEventsActivity">
@@ -33,6 +34,29 @@
         android:layout_marginRight="20dp"
         android:orientation="vertical"
         android:padding="10dp">
+
+<!--        <Button-->
+<!--            android:id="@+id/BSelectImage"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:backgroundTint="@color/colorPrimary"-->
+<!--            android:text="SELECT IMAGE"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textSize="18sp" />-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/IVPreviewImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:layout_below="@id/BSelectImage"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginBottom="16dp"/>-->
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -115,6 +139,9 @@
                         android:text="Academic"/>
 
                 </RadioGroup>
+
+
+
 
 
                 <Button
