@@ -1,11 +1,10 @@
 package com.example.broadcast.firebase
 
 import android.util.Log
-import com.example.broadcast.activities.AddEventsActivity
-import com.example.broadcast.activities.EventsActivity
-import com.example.broadcast.activities.SigninActivity
-import com.example.broadcast.activities.SignupActivity
+import android.widget.Toast
+import com.example.broadcast.activities.*
 import com.example.broadcast.models.Event
+import com.example.broadcast.models.Lost
 import com.example.broadcast.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentId
@@ -117,6 +116,65 @@ class FireStoreClass {
 
 
     }
+
+
+
+    fun createLost(activity: AddLostActivity, lost: Lost) {
+
+        myFirestore.collection("LOSTS")
+            .document()
+            .set(lost, SetOptions.merge())
+            .addOnSuccessListener {
+                Log.e(activity.javaClass.simpleName, "Lost created successfully.")
+
+                Toast.makeText(activity, "Your Lost item is Added", Toast.LENGTH_SHORT).show()
+
+                activity.lostCreatedSuccessfully()
+            }
+            .addOnFailureListener { e ->
+                activity.hideProgressDialog()
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while adding a lost.",
+                    e
+                )
+            }
+    }
+
+
+    fun getLostsList(activity:LostActivity){
+        myFirestore.collection("EVENTS")
+            .get()
+            .addOnSuccessListener { document ->
+
+                Log.e(activity.javaClass.simpleName, document.documents.toString())
+
+                val lostsList: ArrayList<Lost> = ArrayList()
+
+
+                for (i in document.documents) {
+
+                    val lost = i.toObject(Lost::class.java)!!
+
+
+                    lostsList.add(lost)
+                }
+
+
+                //activity.populateLostsListToUI(lostsList)
+            }
+            .addOnFailureListener { e ->
+
+                activity.hideProgressDialog()
+                Log.e(activity.javaClass.simpleName, "Error while addingg a lost.", e)
+            }
+
+
+    }
+
+
+
+
 
 
 }

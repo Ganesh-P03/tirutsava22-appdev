@@ -39,23 +39,91 @@
                 android:padding="2sp">
 
                 <ImageView
-                    android:id="@+id/iv_board_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_add_img"
 
-                    android:contentDescription="image_contentDescription" />
+                    android:src="@drawable/ic_launcher_background"
+                    android:layout_width="400px"
+                    android:layout_height="400px"
+
+                    android:contentDescription="image_contentDescription"
+                    android:layout_margin="10px" />
+                <Button
+                    android:id="@+id/btn_choose_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="selectImage"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12px">
+                    android:layout_marginTop="50px">
 
                     <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/et_board_name"
+                        android:id="@+id/et_lost_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="name"
                         android:inputType="text"
+                        android:textSize="12dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50px">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_lost_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="description"
+                        android:inputType="text"
+                        android:textSize="12dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50px">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_lost_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="date/time"
+                        android:inputType="text"
+                        android:textSize="12dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50px">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_lost_place"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="enter the place that you feel it may be lost at"
+                        android:inputType="text"
+                        android:textSize="12dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50px">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_lost_contact_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="name"
+                        android:inputType="number"
                         android:textSize="12dp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>

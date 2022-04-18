@@ -22,14 +22,14 @@ class SplashActivity : BaseActivity() {
 
             var currentUserId = FireStoreClass().getCurrentUserID()
 
-//            if(currentUserId.isNotEmpty()){
-//                startActivity(Intent(this, MainActivity::class.java))
-//                finish()
-//            }
-//            else{
+            if(currentUserId.isNotEmpty()){
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
+            else{
                 startActivity(Intent(this, IntroActivity::class.java))
                 finish()
-            //}
+            }
 
         },2000)
     }
