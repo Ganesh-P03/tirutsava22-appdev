@@ -3,7 +3,15 @@ package com.example.broadcast.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.broadcast.R
+import com.example.broadcast.adapters.EventItemsAdapter
+import com.example.broadcast.adapters.LostItemsAdapter
+import com.example.broadcast.firebase.FireStoreClass
+import com.example.broadcast.models.Event
+import com.example.broadcast.models.Lost
+import kotlinx.android.synthetic.main.activity_events.*
 import kotlinx.android.synthetic.main.activity_lost.*
 import kotlinx.android.synthetic.main.activity_signin.*
 import kotlinx.android.synthetic.main.activity_signin.toolbar_sign_in_activity
@@ -16,6 +24,9 @@ class LostActivity : BaseActivity() {
         fab_add_lost.setOnClickListener{
             startActivity(Intent(this,AddLostActivity::class.java))
         }
+
+        showProgressDialog("Please Wait")
+        FireStoreClass().getLostsList(this)
     }
 
     private fun setActionBar(){
@@ -30,5 +41,26 @@ class LostActivity : BaseActivity() {
         toolbar_lost_activity.setNavigationOnClickListener{onBackPressed()}
 
 
+    }
+
+
+    fun populateLostsListToUI(lostList:ArrayList<Lost>){
+        hideProgressDialog()
+
+        if(lostList.size>0){
+            rv_losts_list.visibility= View.VISIBLE
+            tv_nothing_available.visibility= View.GONE
+
+            rv_losts_list.layoutManager = LinearLayoutManager(this)
+            rv_losts_list.setHasFixedSize(true)
+
+            val adapter = LostItemsAdapter(this, lostList)
+            rv_losts_list.adapter = adapter // Attach the adapter to the recyclerView.
+
+        } else {
+            rv_losts_list.visibility = View.GONE
+            tv_nothing_available.visibility = View.VISIBLE
+
+        }
     }
 }

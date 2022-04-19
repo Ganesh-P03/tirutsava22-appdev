@@ -143,7 +143,7 @@ class FireStoreClass {
 
 
     fun getLostsList(activity:LostActivity){
-        myFirestore.collection("EVENTS")
+        myFirestore.collection("LOSTS")
             .get()
             .addOnSuccessListener { document ->
 
@@ -161,7 +161,7 @@ class FireStoreClass {
                 }
 
 
-                //activity.populateLostsListToUI(lostsList)
+                activity.populateLostsListToUI(lostsList)
             }
             .addOnFailureListener { e ->
 
