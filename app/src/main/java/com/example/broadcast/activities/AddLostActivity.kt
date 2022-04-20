@@ -99,7 +99,7 @@ class AddLostActivity : BaseActivity() {
                     .with(this)
                     .load(Uri.parse(mSelectedImageFileUri.toString())) // URI of the image
                     .centerCrop() // Scale type of the image.
-                    .placeholder(R.drawable.ic_img_launcher_background) // A default place holder
+                    .placeholder(R.drawable.ic_launcher_background) // A default place holder
                     .into(iv_add_img) // the view in which the image will be loaded.
             } catch (e: IOException) {
                 e.printStackTrace()

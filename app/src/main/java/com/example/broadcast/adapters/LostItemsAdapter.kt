@@ -39,7 +39,7 @@ open class LostItemsAdapter (private val context: Context,
                 .with(context)
                 .load(model.lost_image)
                 .centerCrop()
-                .placeholder(R.drawable.ic_img_launcher_background)
+                .placeholder(R.drawable.ic_launcher_background)
                 .into(holder.itemView.iv_lost_img)
 
             holder.itemView.tv_lost_name.text = model.lost_name
