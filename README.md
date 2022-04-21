@@ -61,14 +61,46 @@ This can be done using this app.
 <p>
     <img src="Images/Screenshot_splash_Activity.jpg" width="245">&emsp;
   <img src="Images/Screenshot_Intro_Activity.jpg" width="245">&emsp;
-  <img src="Images/Screenshot_Main_Activity.jpg" width="245">
 </p>
 
 <br>
 <br>
 
 <p>
+    <img src="Images/Screenshot_Main_Activity.jpg" width="245">
     <img src="Images/Screenshot_Signup_Activity.jpg" width="245">&emsp;
+</p>
+
+<br>
+<br>
+
+<p>
   <img src="Images/Screenshot_Lost_Activity.jpg" width="245">&emsp;
   <img src="Images/Screenshot_add_event.jpg" width="245">
 </p>
+
+## Version
+
+v1.0.0
+
+## Permissions
+
+THIS APP REQUIRES
+
+> >
+
+- ACTIVE INTERNET CONNECTION
+- READ EXTERNAL STORAGE PERMISSION
+
+## APK
+
+The apk is in app/release folder in the root directory.
+Alternatively, click on [apk](https://github.com/Ganesh-P03/tirutsava22_appdev/tree/master/app/release)
+
+## Technologies used
+
+- Kotlin Language
+- Material design
+- Firestore Database
+- Glide
+- Android studio
