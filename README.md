@@ -44,6 +44,10 @@ What if we had a platform where you could notify everyone in your community that
 
 This can be done using this app.
 
+> >
+
+     After restarting the app, the newly added item will be visible.
+
 ## Features
 
 - Splash Screen
@@ -53,3 +57,18 @@ This can be done using this app.
 - One can add into the database easily
 
 ## Screenshots
+
+<p>
+    <img src="Images/Screenshot_splash_Activity.jpg" width="245">&emsp;
+  <img src="Images/Screenshot_Intro_Activity.jpg" width="245">&emsp;
+  <img src="Images/Screenshot_Main_Activity.jpg" width="245">
+</p>
+
+<br>
+<br>
+
+<p>
+    <img src="Images/Screenshot_Signup_Activity.jpg" width="245">&emsp;
+  <img src="Images/Screenshot_Lost_Activity.jpg" width="245">&emsp;
+  <img src="Images/Screenshot_add_event.jpg" width="245">
+</p>

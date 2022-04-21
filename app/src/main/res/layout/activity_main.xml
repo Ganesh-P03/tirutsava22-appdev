@@ -9,24 +9,25 @@
     android:layout_gravity="center_vertical">
 
 
+
     <TextView
         android:id="@+id/tv_events"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginTop="200dp"
-
-        android:background="@drawable/button_shape"
-        android:text="Events"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:textSize="20sp"/>
+        android:layout_marginTop="300dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="Events"
+        android:textSize="20sp" />
+
 
 
     <TextView
         android:id="@+id/tv_lost"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
 
         android:background="@drawable/button_shape"
         android:text="Lost"
